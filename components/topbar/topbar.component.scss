@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+.topbar {
+  position: fixed;      /* Maak de topbar ook vast aan de bovenkant */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;          /* Zorg dat deze boven of gelijk aan de navbar staat */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 24px;
+  padding: 8px 16px;
+  background: #000;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.topbar__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.topbar__indicator {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #b5473a;
+}
+
+.topbar__status--open {
+  color: #7ed99a;
+}
+
+.topbar__status--open .topbar__indicator {
+  background: #3ddc6b;
+  box-shadow: 0 0 8px #3ddc6b88;
+}

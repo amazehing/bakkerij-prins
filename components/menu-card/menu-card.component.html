@@ -1,0 +1,19 @@
+
+<article class="menu-card">
+  <div class="menu-card__image">
+    @if (item.foto) {
+      <img
+        [src]="item.foto"
+        [alt]="item.naam"
+        loading="lazy"
+      />
+    } @else {
+      <span aria-hidden="true">{{ emoji }}</span>
+    }
+  </div>
+
+  <div class="menu-card__info">
+    <h3 class="menu-card__name">{{ item.naam }}</h3>
+    <b class="menu-card__price">€ {{ prijs }}</b>
+  </div>
+</article>

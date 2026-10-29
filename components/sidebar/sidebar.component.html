@@ -1,0 +1,70 @@
+
+<div
+  class="sidebar__overlay"
+  [class.sidebar__overlay--visible]="open"
+  [attr.aria-hidden]="!open"
+  (click)="close.emit()"
+></div>
+
+<aside
+  id="site-sidebar"
+  class="sidebar"
+  [class.sidebar--open]="open"
+  [attr.aria-hidden]="!open"
+  [attr.inert]="open ? null : ''"
+  aria-label="Navigatiemenu"
+>
+  <button
+    class="sidebar__close"
+    type="button"
+    aria-label="Sidebar sluiten"
+    (click)="close.emit()"
+  >
+    <span></span>
+    <span></span>
+  </button>
+
+  <img
+    src="logo.jpeg"
+    alt="Bakkerij Prins"
+    class="sidebar__logo"
+    width="110"
+    height="110"
+  />
+
+  <button
+    class="sidebar__item"
+    [class.sidebar__item--active]="activeId === 'alles'"
+    [attr.aria-current]="activeId === 'alles' ? 'page' : null"
+    type="button"
+    (click)="categorySelect.emit('alles')"
+  >
+    ⭐ Alles
+  </button>
+
+  @for (categorie of menu; track categorie.id) {
+    <button
+      class="sidebar__item"
+      [class.sidebar__item--active]="activeId === categorie.id"
+      [attr.aria-current]="activeId === categorie.id ? 'page' : null"
+      type="button"
+      (click)="categorySelect.emit(categorie.id)"
+    >
+      <span>{{ categorie.emoji }} {{ categorie.titel }}</span>
+      <small>{{ categorie.items.length }}</small>
+    </button>
+  }
+
+  <button
+    class="sidebar__item"
+    type="button"
+    (click)="contactSelect.emit()"
+  >
+    📍 Adres &amp; openingstijden
+  </button>
+
+  <p class="sidebar__footer">
+    Extra bak saus € 0,75<br />
+    Extra vlees € 3,00
+  </p>
+</aside>

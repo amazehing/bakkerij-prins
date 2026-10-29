@@ -1,0 +1,31 @@
+
+<main class="menu" id="menu">
+  @if (toonTitel) {
+    <h2 class="menu__title menu__title--main">
+      {{ titel }}
+    </h2>
+  }
+
+  @for (categorie of categorieen; track categorie.id) {
+    <section class="menu__section">
+      <h2 class="menu__title">
+        {{ categorie.emoji }} {{ categorie.titel }}
+      </h2>
+
+      <div class="menu__grid">
+        @for (item of categorie.items; track item.naam) {
+          <app-menu-card
+            [item]="item"
+            [emoji]="categorie.emoji"
+          />
+        }
+      </div>
+    </section>
+  }
+
+  <p class="menu__extra">
+    Extra bak saus € 0,75
+    <span aria-hidden="true">•</span>
+    Extra vlees € 3,00
+  </p>
+</main>

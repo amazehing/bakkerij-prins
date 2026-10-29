@@ -1,0 +1,26 @@
+
+<header class="navbar">
+  <button
+    class="navbar__burger"
+    [class.navbar__burger--open]="menuOpen"
+    type="button"
+    aria-label="Menu openen of sluiten"
+    [attr.aria-expanded]="menuOpen"
+    aria-controls="site-sidebar"
+    (click)="menuToggle.emit()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <img
+    class="navbar__logo"
+    src="logo.jpeg"
+    alt=""
+    width="36"
+    height="36"
+  />
+
+  <strong class="navbar__brand">Bakkerij Prins</strong>
+</header>

@@ -1,0 +1,15 @@
+
+<div class="topbar">
+  <span class="topbar__address">
+    📍 Prinsenplein 55, Rotterdam
+  </span>
+
+  <span
+    class="topbar__status"
+    [class.topbar__status--open]="geopend"
+    role="status"
+  >
+    <span class="topbar__indicator" aria-hidden="true"></span>
+    {{ statusTekst }}
+  </span>
+</div>

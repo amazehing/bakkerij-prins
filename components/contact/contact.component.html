@@ -1,0 +1,37 @@
+
+<section class="contact" id="contact">
+  <article class="contact__card">
+    <h2 class="contact__heading">📍 Adres</h2>
+
+    <p class="contact__text">
+      Bakkerij Prins<br />
+      Prinsenplein 55<br />
+      3078 GX Rotterdam
+    </p>
+
+    <a
+      class="contact__route"
+      href="https://www.google.com/maps/place/Bakkerij+Prins/@51.892541,4.5562129,15.75z/data=!4m15!1m8!3m7!1s0x47c432601d264a93:0x570811db4125f005!2sPrinsenplein+55,+3078+VN+Rotterdam!3b1!8m2!3d51.8911779!4d4.5516125!16s%2Fg%2F11rg61rn_5!3m5!1s0x47c43321189b6335:0xc2e1bab383c92925!8m2!3d51.8911779!4d4.5516125!16s%2Fg%2F11f6nkgwht?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Route plannen
+    </a>
+  </article>
+
+  <article class="contact__card">
+    <h2 class="contact__heading">🕒 Openingstijden</h2>
+
+    <ul class="contact__hours">
+      @for (tijd of tijden; track tijd.dag; let i = $index) {
+        <li
+          class="contact__day"
+          [class.contact__day--today]="i === vandaag"
+        >
+          <span>{{ tijd.dag }}</span>
+          <span>{{ tijd.tijd }}</span>
+        </li>
+      }
+    </ul>
+  </article>
+</section>

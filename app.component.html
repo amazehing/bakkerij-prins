@@ -1,0 +1,30 @@
+
+<app-topbar />
+
+<app-navbar
+  [menuOpen]="menuOpen()"
+  (menuToggle)="toggleMenu()"
+/>
+
+<app-sidebar
+  [menu]="menu"
+  [activeId]="actief()"
+  [open]="menuOpen()"
+  (categorySelect)="kiesCategorie($event)"
+  (contactSelect)="naarContact()"
+  (close)="sluitMenu()"
+/>
+
+<app-hero
+  (menuClick)="openMenu()"
+/>
+
+<app-contact />
+
+<app-menu
+  [categorieen]="zichtbareCategorieen()"
+  [titel]="menutitel()"
+  [toonTitel]="actief() === 'alles'"
+/>
+
+<app-footer />
